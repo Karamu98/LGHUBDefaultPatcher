@@ -131,7 +131,7 @@ namespace LGHUB
         public string ApplicationFolder { get; set; }
 
         [JsonProperty("applicationId")]
-        public string ApplicationId { get; set; }
+        public Guid ApplicationId { get; set; }
 
         [JsonProperty("applicationPath", NullValueHandling = NullValueHandling.Ignore)]
         public string ApplicationPath { get; set; }
@@ -143,7 +143,7 @@ namespace LGHUB
         public Command[] Commands { get; set; }
 
         [JsonProperty("databaseId", NullValueHandling = NullValueHandling.Ignore)]
-        public string? DatabaseId { get; set; }
+        public Guid? DatabaseId { get; set; }
 
         [JsonProperty("isInstalled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsInstalled { get; set; }
@@ -182,7 +182,7 @@ namespace LGHUB
     public partial class Command
     {
         [JsonProperty("cardId")]
-        public string CardId { get; set; }
+        public Guid CardId { get; set; }
 
         [JsonProperty("category")]
         public string Category { get; set; }
@@ -206,7 +206,7 @@ namespace LGHUB
         public Equalizer Equalizer { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -215,7 +215,7 @@ namespace LGHUB
         public bool? ReadOnly { get; set; }
 
         [JsonProperty("applicationId", NullValueHandling = NullValueHandling.Ignore)]
-        public string? ApplicationId { get; set; }
+        public Guid? ApplicationId { get; set; }
 
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
         public string Category { get; set; }
@@ -224,7 +224,7 @@ namespace LGHUB
         public Macro Macro { get; set; }
 
         [JsonProperty("profileId", NullValueHandling = NullValueHandling.Ignore)]
-        public string? ProfileId { get; set; }
+        public Guid? ProfileId { get; set; }
 
         [JsonProperty("firmwareLightingSettings", NullValueHandling = NullValueHandling.Ignore)]
         public FirmwareLightingSettings FirmwareLightingSettings { get; set; }
@@ -479,7 +479,7 @@ namespace LGHUB
     public partial class Keyboard
     {
         [JsonProperty("displayName")]
-        public long DisplayName { get; set; }
+        public string DisplayName { get; set; }
 
         [JsonProperty("hidUsage")]
         public long HidUsage { get; set; }
@@ -689,7 +689,7 @@ namespace LGHUB
         public string[] DeviceSupport { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -710,7 +710,7 @@ namespace LGHUB
     public partial class Assignment
     {
         [JsonProperty("cardId")]
-        public string CardId { get; set; }
+        public Guid CardId { get; set; }
 
         [JsonProperty("slotId")]
         public string SlotId { get; set; }
@@ -740,13 +740,13 @@ namespace LGHUB
         public bool? ActiveForApplication { get; set; }
 
         [JsonProperty("applicationId")]
-        public string ApplicationId { get; set; }
+        public Guid ApplicationId { get; set; }
 
         [JsonProperty("assignments")]
         public Assignment[] Assignments { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -755,7 +755,7 @@ namespace LGHUB
         public Publishing Publishing { get; set; }
 
         [JsonProperty("syncLightingCard", NullValueHandling = NullValueHandling.Ignore)]
-        public string? SyncLightingCard { get; set; }
+        public Guid? SyncLightingCard { get; set; }
     }
 
     public partial class Publishing

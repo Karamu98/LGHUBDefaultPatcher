@@ -11,22 +11,17 @@ namespace UpdatePersistentDefault // Note: actual namespace depends on the proje
 
         static void Main(string[] args)
         {
+            while(System.Diagnostics.Process.GetProcessesByName("lghub").Length > 0)
+            {
+                Console.WriteLine("Please close LGHUB before running this tool, then press Enter.");
+                Console.ReadLine();
+            }
+
             Console.WriteLine("Set all default profiles to Desktop Default? (y/n)");
             string? input = Console.ReadLine();
             if (input != "y")
             {
                 return;
-            }
-
-            string? lghubExecutablePath = null;
-            foreach(var process in System.Diagnostics.Process.GetProcessesByName("lghub"))
-            {
-                if(!process.HasExited)
-                {
-                    lghubExecutablePath = process.MainModule.FileName;
-                    process.Kill();
-                    process.WaitForExit();
-                }
             }
 
             SQLCONNECTION = new SQLiteConnection("Data Source=" + LGHUBDataPath + ";Version=3;Synchronous=Off;UTF8Encoding=True;");
@@ -87,10 +82,8 @@ namespace UpdatePersistentDefault // Note: actual namespace depends on the proje
 
             SQLCONNECTION.Close();
 
-            if(lghubExecutablePath != null)
-            {
-                System.Diagnostics.Process.Start(lghubExecutablePath);
-            }
+            Console.WriteLine("Press Enter to close...");
+            Console.ReadLine();
         }
 
         private static LGHUB.LGHUBData? GetDataFromLGHUB()
@@ -130,7 +123,7 @@ namespace UpdatePersistentDefault // Note: actual namespace depends on the proje
 
         private static void BuildApplicationLUT(LGHUB.LGHUBData data)
         {
-            m_applicationLUT = new Dictionary<string, LGHUB.Application>(data.Applications.ApplicationsApplications.Length);
+            m_applicationLUT = new Dictionary<Guid, LGHUB.Application>(data.Applications.ApplicationsApplications.Length);
             foreach (LGHUB.Application? app in data.Applications.ApplicationsApplications)
             {
                 m_applicationLUT.Add(app.ApplicationId, app);
@@ -139,17 +132,17 @@ namespace UpdatePersistentDefault // Note: actual namespace depends on the proje
 
         private static void BuildMouseSettingsLUT(LGHUB.LGHUBData data)
         {
-            m_mouseSettingsLUT = new Dictionary<string, LGHUB.MouseSettings>(data.Cards.CardsCards.Length);
+            m_mouseSettingsLUT = new Dictionary<Guid, LGHUB.MouseSettings>(data.Cards.CardsCards.Length);
             foreach (LGHUB.Card? card in data.Cards.CardsCards)
             {
                 if(card.MouseSettings != null && card.ProfileId != null)
                 {
-                    m_mouseSettingsLUT.Add(card.ProfileId, card.MouseSettings);
+                    m_mouseSettingsLUT.Add((Guid)card.ProfileId, card.MouseSettings);
                 }
             }
         }
 
-        private static Dictionary<string, LGHUB.Application> m_applicationLUT;
-        private static Dictionary<string, LGHUB.MouseSettings> m_mouseSettingsLUT;
+        private static Dictionary<Guid, LGHUB.Application> m_applicationLUT;
+        private static Dictionary<Guid, LGHUB.MouseSettings> m_mouseSettingsLUT;
     }
 }
