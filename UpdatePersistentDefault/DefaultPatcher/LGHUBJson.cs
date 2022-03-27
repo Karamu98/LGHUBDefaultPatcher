@@ -4,6 +4,7 @@ namespace DefaultPatcher
 {
     namespace LGHUB
     {
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class LGHUBData
         {
             [JsonProperty("/devices/g502_hero/persistent_data")]
@@ -100,6 +101,7 @@ namespace DefaultPatcher
             public bool SettingsTransferred { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Analytics
         {
             [JsonProperty("hostId")]
@@ -112,16 +114,19 @@ namespace DefaultPatcher
             public string VersionNumber { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class ArxControlAuthentication
         {
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Applications
         {
             [JsonProperty("applications")]
             public Application[] ApplicationsApplications { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Application
         {
             [JsonProperty("applicationFolder", NullValueHandling = NullValueHandling.Ignore)]
@@ -167,6 +172,7 @@ namespace DefaultPatcher
             public string PosterPath { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class CategoryColor
         {
             [JsonProperty("hex")]
@@ -176,6 +182,7 @@ namespace DefaultPatcher
             public string Tag { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Command
         {
             [JsonProperty("cardId")]
@@ -188,60 +195,63 @@ namespace DefaultPatcher
             public string Name { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Cards
         {
             [JsonProperty("cards")]
             public Card[] CardsCards { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Card
         {
-            [JsonProperty("attribute")]
-            public string Attribute { get; set; }
-
-            [JsonProperty("equalizer", NullValueHandling = NullValueHandling.Ignore)]
-            public Equalizer Equalizer { get; set; }
-
-            [JsonProperty("id")]
-            public Guid Id { get; set; }
-
-            [JsonProperty("name")]
-            public string Name { get; set; }
-
-            [JsonProperty("readOnly", NullValueHandling = NullValueHandling.Ignore)]
-            public bool? ReadOnly { get; set; }
-
             [JsonProperty("applicationId", NullValueHandling = NullValueHandling.Ignore)]
             public Guid? ApplicationId { get; set; }
+
+            [JsonProperty("attribute")]
+            public string Attribute { get; set; }
 
             [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
             public string Category { get; set; }
 
-            [JsonProperty("macro", NullValueHandling = NullValueHandling.Ignore)]
-            public Macro Macro { get; set; }
-
-            [JsonProperty("profileId", NullValueHandling = NullValueHandling.Ignore)]
-            public Guid? ProfileId { get; set; }
+            [JsonProperty("equalizer", NullValueHandling = NullValueHandling.Ignore)]
+            public Equalizer Equalizer { get; set; }
 
             [JsonProperty("firmwareLightingSettings", NullValueHandling = NullValueHandling.Ignore)]
             public FirmwareLightingSettings FirmwareLightingSettings { get; set; }
 
+            [JsonProperty("cameraSettings", NullValueHandling = NullValueHandling.Ignore)]
+            public CameraSettings CameraSettings { get; set; }
+
+            [JsonProperty("id")]
+            public Guid Id { get; set; }
+
+            [JsonProperty("macro", NullValueHandling = NullValueHandling.Ignore)]
+            public Macro Macro { get; set; }
+
+            [JsonProperty("mouseSettings", NullValueHandling = NullValueHandling.Ignore)]
+            public MouseSettings MouseSettings { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("profileId", NullValueHandling = NullValueHandling.Ignore)]
+            public Guid? ProfileId { get; set; }
+
             [JsonProperty("proEqualizer", NullValueHandling = NullValueHandling.Ignore)]
             public ProEqualizer ProEqualizer { get; set; }
+
+            [JsonProperty("readOnly", NullValueHandling = NullValueHandling.Ignore)]
+            public bool? ReadOnly { get; set; }
 
             [JsonProperty("videoSettings", NullValueHandling = NullValueHandling.Ignore)]
             public VideoSettings VideoSettings { get; set; }
 
-            [JsonProperty("cameraSettings", NullValueHandling = NullValueHandling.Ignore)]
-            public CameraSettings CameraSettings { get; set; }
-
             [JsonProperty("syncLightingSettings", NullValueHandling = NullValueHandling.Ignore)]
             public SyncLightingSettings SyncLightingSettings { get; set; }
-
-            [JsonProperty("mouseSettings", NullValueHandling = NullValueHandling.Ignore)]
-            public MouseSettings MouseSettings { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class CameraSettings
         {
             [JsonProperty("audioMode")]
@@ -278,6 +288,7 @@ namespace DefaultPatcher
             public Exposure Zoom { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Exposure
         {
             [JsonProperty("mode")]
@@ -287,12 +298,14 @@ namespace DefaultPatcher
             public long? Value { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Iris
         {
             [JsonProperty("mode")]
             public string Mode { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Equalizer
         {
             [JsonProperty("advanced")]
@@ -311,27 +324,30 @@ namespace DefaultPatcher
             public string Type { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class FirmwareLightingSettings
         {
             [JsonProperty("effects")]
             public Effect[] Effects { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Effect
         {
             [JsonProperty("fixedParams", NullValueHandling = NullValueHandling.Ignore)]
             public FixedParams FixedParams { get; set; }
+
+            [JsonProperty("cycleParams", NullValueHandling = NullValueHandling.Ignore)]
+            public CycleParams CycleParams { get; set; }
 
             [JsonProperty("id")]
             public string Id { get; set; }
 
             [JsonProperty("zoneType")]
             public string ZoneType { get; set; }
-
-            [JsonProperty("cycleParams", NullValueHandling = NullValueHandling.Ignore)]
-            public CycleParams CycleParams { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class CycleParams
         {
             [JsonProperty("intensity")]
@@ -341,18 +357,21 @@ namespace DefaultPatcher
             public long PeriodInMs { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class FixedParams
         {
             [JsonProperty("color")]
             public Color Color { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Color
         {
             [JsonProperty("rgba")]
             public Rgba Rgba { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Rgba
         {
             [JsonProperty("alpha")]
@@ -365,6 +384,7 @@ namespace DefaultPatcher
             public double Green { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Macro
         {
             [JsonProperty("actionName", NullValueHandling = NullValueHandling.Ignore)]
@@ -373,11 +393,11 @@ namespace DefaultPatcher
             [JsonProperty("keystroke", NullValueHandling = NullValueHandling.Ignore)]
             public Keystroke Keystroke { get; set; }
 
-            [JsonProperty("type")]
-            public string Type { get; set; }
-
             [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
             public Action Action { get; set; }
+
+            [JsonProperty("type")]
+            public string Type { get; set; }
 
             [JsonProperty("onboardable", NullValueHandling = NullValueHandling.Ignore)]
             public bool? Onboardable { get; set; }
@@ -386,6 +406,7 @@ namespace DefaultPatcher
             public Sequence Sequence { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Action
         {
             [JsonProperty("actionId")]
@@ -401,12 +422,14 @@ namespace DefaultPatcher
             public Parameters Parameters { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class ErroneousParameters
         {
             [JsonProperty("app_selection")]
             public string AppSelection { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Parameters
         {
             [JsonProperty("app_selection")]
@@ -416,6 +439,7 @@ namespace DefaultPatcher
             public string CommandSelection { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Keystroke
         {
             [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
@@ -425,6 +449,7 @@ namespace DefaultPatcher
             public long[] Modifiers { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Sequence
         {
             [JsonProperty("defaultDelay")]
@@ -452,12 +477,14 @@ namespace DefaultPatcher
             public bool UseSimpleActions { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class SimpleSequence
         {
             [JsonProperty("components")]
             public Component[] Components { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Component
         {
             [JsonProperty("keyboard", NullValueHandling = NullValueHandling.Ignore)]
@@ -467,12 +494,14 @@ namespace DefaultPatcher
             public Delay Delay { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Delay
         {
             [JsonProperty("durationMs")]
             public long DurationMs { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Keyboard
         {
             [JsonProperty("displayName")]
@@ -485,6 +514,7 @@ namespace DefaultPatcher
             public bool? IsDown { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class MouseSettings
         {
             [JsonProperty("dpiTable")]
@@ -494,6 +524,7 @@ namespace DefaultPatcher
             public ReportRate ReportRate { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class DpiTable
         {
             [JsonProperty("activeDpi")]
@@ -509,12 +540,14 @@ namespace DefaultPatcher
             public long ShiftDpi { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class ReportRate
         {
             [JsonProperty("value")]
             public long Value { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class ProEqualizer
         {
             [JsonProperty("bands")]
@@ -533,6 +566,7 @@ namespace DefaultPatcher
             public string Type { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class SyncLightingSettings
         {
             [JsonProperty("devices")]
@@ -542,6 +576,7 @@ namespace DefaultPatcher
             public Effect[] Effects { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Devices
         {
             [JsonProperty("g502hero")]
@@ -551,6 +586,7 @@ namespace DefaultPatcher
             public string G513 { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class VideoSettings
         {
             [JsonProperty("antiFlicker")]
@@ -584,6 +620,7 @@ namespace DefaultPatcher
             public Exposure WhiteBalance { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class CrashReporting
         {
             [JsonProperty("userPrompted")]
@@ -593,39 +630,44 @@ namespace DefaultPatcher
             public string VersionNumber { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class DevicesG502HeroPersistentData
         {
             [JsonProperty("onboardMode")]
             public ArxControlAuthentication OnboardMode { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class DevicesKnown
         {
             [JsonProperty("knownList")]
             public KnownList[] KnownList { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class KnownList
         {
             [JsonProperty("modelId")]
             public string ModelId { get; set; }
+
+            [JsonProperty("serialNumber", NullValueHandling = NullValueHandling.Ignore)]
+            public string SerialNumber { get; set; }
 
             [JsonProperty("timestamp")]
             public string Timestamp { get; set; }
 
             [JsonProperty("type")]
             public string Type { get; set; }
-
-            [JsonProperty("serialNumber", NullValueHandling = NullValueHandling.Ignore)]
-            public string SerialNumber { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class IntegrationManagerSettings
         {
             [JsonProperty("allowLedSdk")]
             public bool AllowLedSdk { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class LightingEffects20A6C60738Bd4B6DB72C280C04320825
         {
             [JsonProperty("deviceSupport")]
@@ -635,18 +677,21 @@ namespace DefaultPatcher
             public FixedInfo FixedInfo { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class FixedInfo
         {
             [JsonProperty("lightingSlots")]
             public LightingSlots LightingSlots { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class LightingSlots
         {
             [JsonProperty("infoMap")]
             public InfoMap InfoMap { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class InfoMap
         {
             [JsonProperty("PERKEY_INDICATOR")]
@@ -656,30 +701,35 @@ namespace DefaultPatcher
             public Perkey PerkeyKeyboard { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Perkey
         {
             [JsonProperty("perKeyMap")]
             public PerKeyMap PerKeyMap { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class PerKeyMap
         {
             [JsonProperty("colorCodeMap")]
             public Dictionary<string, ColorCodeMap> ColorCodeMap { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class ColorCodeMap
         {
             [JsonProperty("hex")]
             public string Hex { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class LightingPrefabs
         {
             [JsonProperty("list")]
             public List[] List { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class List
         {
             [JsonProperty("deviceSupport")]
@@ -695,6 +745,7 @@ namespace DefaultPatcher
             public string Type { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class PersistentFeatures
         {
             [JsonProperty("assignments")]
@@ -704,6 +755,7 @@ namespace DefaultPatcher
             public Feature[] Features { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Assignment
         {
             [JsonProperty("cardId")]
@@ -713,6 +765,7 @@ namespace DefaultPatcher
             public string SlotId { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Feature
         {
             [JsonProperty("configuringSlots")]
@@ -725,12 +778,14 @@ namespace DefaultPatcher
             public string Type { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Profiles
         {
             [JsonProperty("profiles")]
             public Profile[] ProfilesProfiles { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Profile
         {
             [JsonProperty("activeForApplication", NullValueHandling = NullValueHandling.Ignore)]
@@ -755,6 +810,7 @@ namespace DefaultPatcher
             public Guid? SyncLightingCard { get; set; }
         }
 
+        [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
         public partial class Publishing
         {
             [JsonProperty("name")]
@@ -768,6 +824,32 @@ namespace DefaultPatcher
 
             [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
             public string Metadata { get; set; }
+        }
+
+        public class DoubleFormatConverter : JsonConverter<double>
+        {
+            public override void WriteJson(JsonWriter writer, double value, JsonSerializer serializer)
+            {
+                if(value % 1 == 0)
+                {
+                    writer.WriteValue((int)value);
+                }
+                else
+                {
+                    writer.WriteValue(value);
+                }
+            }
+
+            public override double ReadJson(JsonReader reader, Type objectType, double existingValue, bool hasExistingValue, JsonSerializer serializer)
+            {
+                string? val = reader.ReadAsString();
+                if (val == null)
+                {
+                    return -1;
+                }
+
+                return double.Parse(val);
+            }
         }
     }
 
