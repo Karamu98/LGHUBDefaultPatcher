@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace DefaultPatcher
 {
-    public partial class ListItem : UserControl
+    public partial class ApplicationListItem : UserControl
     {
         public bool OverWrite { get; private set; }
         public LGHUB.Profile Profile { get; private set; }
         public string AppName { get; private set; }
-        private Action<ListItem> m_onRootSelectedCall;
+        private Action<ApplicationListItem> m_onRootSelectedCall;
 
 
-        public ListItem()
+        public ApplicationListItem()
         {
             InitializeComponent();
         }
 
-        public void Init(string imagePath, string appName, bool overwrite, Action<ListItem> onRootSelected, LGHUB.Profile profile)
+        public void Init(string imagePath, string appName, bool overwrite, Action<ApplicationListItem> onRootSelected, LGHUB.Profile profile)
         {
             SetAppName(appName);
             SetImage(imagePath);

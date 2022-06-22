@@ -1,6 +1,6 @@
 ﻿namespace DefaultPatcher
 {
-    partial class ListItem
+    partial class ApplicationListItem
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListItem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationListItem));
             this.appImage = new System.Windows.Forms.PictureBox();
             this.appName = new System.Windows.Forms.Label();
             this.appOverwrite = new System.Windows.Forms.CheckBox();

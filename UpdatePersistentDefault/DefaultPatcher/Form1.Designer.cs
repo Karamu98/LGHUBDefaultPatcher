@@ -51,6 +51,18 @@
             this.invertSelectAttsBtn = new System.Windows.Forms.Button();
             this.unselectAllAttsBtn = new System.Windows.Forms.Button();
             this.selectAllAttsBtn = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.extractJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromLoadedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.injectJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.injectLoadedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.injectOtherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -58,6 +70,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -83,9 +96,9 @@
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.appList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(995, 681);
+            this.panel1.Size = new System.Drawing.Size(995, 657);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -149,7 +162,7 @@
             this.appList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.appList.Location = new System.Drawing.Point(0, 0);
             this.appList.Name = "appList";
-            this.appList.Size = new System.Drawing.Size(995, 681);
+            this.appList.Size = new System.Drawing.Size(995, 657);
             this.appList.TabIndex = 1;
             // 
             // panel4
@@ -198,7 +211,7 @@
             // processButton
             // 
             this.processButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.processButton.Location = new System.Drawing.Point(0, 638);
+            this.processButton.Location = new System.Drawing.Point(0, 614);
             this.processButton.Name = "processButton";
             this.processButton.Size = new System.Drawing.Size(269, 43);
             this.processButton.TabIndex = 4;
@@ -215,9 +228,9 @@
             this.panel2.Controls.Add(this.processButton);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(995, 0);
+            this.panel2.Location = new System.Drawing.Point(995, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 681);
+            this.panel2.Size = new System.Drawing.Size(269, 657);
             this.panel2.TabIndex = 1;
             // 
             // attributeList
@@ -227,7 +240,7 @@
             this.attributeList.Location = new System.Drawing.Point(0, 97);
             this.attributeList.Name = "attributeList";
             this.attributeList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.attributeList.Size = new System.Drawing.Size(269, 367);
+            this.attributeList.Size = new System.Drawing.Size(269, 343);
             this.attributeList.TabIndex = 6;
             // 
             // panel3
@@ -258,7 +271,7 @@
             this.panel5.Controls.Add(this.unselectAllAttsBtn);
             this.panel5.Controls.Add(this.selectAllAttsBtn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 464);
+            this.panel5.Location = new System.Drawing.Point(0, 440);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(269, 174);
             this.panel5.TabIndex = 5;
@@ -307,6 +320,91 @@
             this.selectAllAttsBtn.UseVisualStyleBackColor = true;
             this.selectAllAttsBtn.Click += new System.EventHandler(this.selectAllAttributesBtn_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.extractJSONToolStripMenuItem,
+            this.injectJSONToolStripMenuItem,
+            this.backupSettingsToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // extractJSONToolStripMenuItem
+            // 
+            this.extractJSONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fromLoadedToolStripMenuItem,
+            this.fromFileToolStripMenuItem});
+            this.extractJSONToolStripMenuItem.Name = "extractJSONToolStripMenuItem";
+            this.extractJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.extractJSONToolStripMenuItem.Text = "Extract JSON";
+            // 
+            // fromLoadedToolStripMenuItem
+            // 
+            this.fromLoadedToolStripMenuItem.Name = "fromLoadedToolStripMenuItem";
+            this.fromLoadedToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.fromLoadedToolStripMenuItem.Text = "From Loaded";
+            this.fromLoadedToolStripMenuItem.Click += new System.EventHandler(this.fromLoadedToolStripMenuItem_Click);
+            // 
+            // fromFileToolStripMenuItem
+            // 
+            this.fromFileToolStripMenuItem.Name = "fromFileToolStripMenuItem";
+            this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.fromFileToolStripMenuItem.Text = "From File";
+            this.fromFileToolStripMenuItem.Click += new System.EventHandler(this.fromFileToolStripMenuItem_Click);
+            // 
+            // injectJSONToolStripMenuItem
+            // 
+            this.injectJSONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.injectLoadedToolStripMenuItem,
+            this.injectOtherToolStripMenuItem});
+            this.injectJSONToolStripMenuItem.Name = "injectJSONToolStripMenuItem";
+            this.injectJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.injectJSONToolStripMenuItem.Text = "Inject JSON";
+            // 
+            // injectLoadedToolStripMenuItem
+            // 
+            this.injectLoadedToolStripMenuItem.Name = "injectLoadedToolStripMenuItem";
+            this.injectLoadedToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.injectLoadedToolStripMenuItem.Text = "Inject Loaded";
+            // 
+            // injectOtherToolStripMenuItem
+            // 
+            this.injectOtherToolStripMenuItem.Name = "injectOtherToolStripMenuItem";
+            this.injectOtherToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.injectOtherToolStripMenuItem.Text = "Inject Other";
+            // 
+            // backupSettingsToolStripMenuItem
+            // 
+            this.backupSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
+            this.backupSettingsToolStripMenuItem.Name = "backupSettingsToolStripMenuItem";
+            this.backupSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupSettingsToolStripMenuItem.Text = "Backup";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -314,8 +412,11 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -325,7 +426,10 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -353,5 +457,17 @@
         private Button invertAppBtn;
         private Button unselectAppsBtn;
         private Button selectAllAppsBtn;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolsToolStripMenuItem;
+        private ToolStripMenuItem extractJSONToolStripMenuItem;
+        private ToolStripMenuItem injectJSONToolStripMenuItem;
+        private ToolStripMenuItem backupSettingsToolStripMenuItem;
+        private ToolStripMenuItem fromLoadedToolStripMenuItem;
+        private ToolStripMenuItem fromFileToolStripMenuItem;
+        private ToolStripMenuItem injectLoadedToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem loadToolStripMenuItem;
+        private ToolStripMenuItem injectOtherToolStripMenuItem;
+        private SaveFileDialog saveFileDialog1;
     }
 }
