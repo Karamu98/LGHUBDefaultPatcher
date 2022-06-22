@@ -13,10 +13,10 @@ Note: This tool has done everything I personally need from it and more however t
 # Attributes
 As I am unable to grab all possible outcomes of data, I'm reconstructing these attribute toggles based on what is available in your settings (excluding the 1 attribute I added) and so, I cannot know what will be copied if you select the tag. That said, here are my observations so far:
 
-FIRMWARE_LIGHTING_SETTINGS = This is lighting for periferals (not all effects work)
-MOUSE_SETTINGS = This is DPI Table and report rate
-DISABLE_KEY_SETTINGS = This is keys disabled in game mode (for keyboard, maybe mouse?)
-CAMERA_SETTINGS = This is for the camera settings tab
-VIDEO_SETTINGS = This is for the video section in camera settings
-MACRO_PLAYBACK = This is for keybinds on just the keyboard (likely more)
-MOUSE_BINDS = This is for mouse button bindings (This is the attribute that doesn't exist, I'm infering its existence where there is no attribute assigned in data, gross but it works)
+FIRMWARE_LIGHTING_SETTINGS = This is lighting for periferals (not all effects work)\
+MOUSE_SETTINGS = This is DPI Table and report rate\
+DISABLE_KEY_SETTINGS = This is keys disabled in game mode (for keyboard, maybe mouse?)\
+CAMERA_SETTINGS = This is for the camera settings tab\
+VIDEO_SETTINGS = This is for the video section in camera settings\
+MACRO_PLAYBACK = This is for keybinds on just the keyboard (likely more)\
+MOUSE_BINDS = This is for mouse button bindings (This is the attribute that doesn't exist, I'm infering its existence where there is no attribute assigned in data, gross but it works)\
